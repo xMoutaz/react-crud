@@ -1,5 +1,6 @@
 from faker import Faker
 from flask import Flask
+from flask_cors import CORS
 
 from models import db, User, UsersResponse
 
@@ -19,6 +20,7 @@ def create_app():
 
 app = create_app()
 
+CORS(app)
 
 @app.route("/users", methods=["POST"])
 def delete_all_users():
