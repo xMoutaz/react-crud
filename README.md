@@ -1,5 +1,9 @@
 # WorkGenius Web Developer test exercise
 
+## Exercise
+
+> _In a nutshell a simple many-to-many relationship modeling with some primitive CRUD and UI_
+
 ### Context
 
 We have a web-application where our admins can see/review/manage users.
@@ -23,7 +27,7 @@ Our customer-success department are missing functionality to group users based o
 
 ### Backend
 
-> Assumption is that you working under ubuntu and have set up python3.8
+> _Assumption is that you working under ubuntu and have set up python3.8_
 
 ```shell
 cd backend
@@ -41,7 +45,7 @@ flask run --reload
 
 ### Frontend
 
-> Assumption is that you already installed Node 12+
+> _Assumption is that you already installed Node 12+_
 
 ```shell
 cd frontend
@@ -52,3 +56,9 @@ npm install
 # Run
 npm start
 ```
+
+## Share results
+
+A zip-archive of project with accomplished exercise can be send via email to ivan@workgenius.com
+
+Good luck ;) 
