@@ -1,0 +1,47 @@
+from faker import Faker
+from flask import Flask
+
+from models import db, User, UsersResponse
+
+fake = Faker()
+
+
+def create_app():
+    _app = Flask(__name__)
+    _app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///:memory:"
+    _app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+    db.init_app(_app)
+    db.drop_all(app=_app)
+    db.create_all(app=_app)
+    return _app
+
+
+app = create_app()
+
+
+@app.route("/users", methods=["POST"])
+def delete_all_users():
+    with app.app_context():
+        for x in range(10):
+            db.session.add(User(name=fake.name()))
+        db.session.commit()
+    return "Users created", 201
+
+
+@app.route("/users", methods=["DELETE"])
+def create_users_batch():
+    with app.app_context():
+        User.query.delete()
+        db.session.commit()
+    return "Users deleted", 201
+
+
+@app.route("/users", methods=["GET"])
+def users():
+    with app.app_context():
+        results = User.query.all()
+    return UsersResponse(items=results).json()
+
+
+if __name__ == "__main__":
+    app.run()
