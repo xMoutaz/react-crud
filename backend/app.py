@@ -36,7 +36,7 @@ def create_users_batch():
     with app.app_context():
         User.query.delete()
         db.session.commit()
-    return "Users deleted", 201
+    return "Users deleted"
 
 
 @app.route("/users", methods=["GET"])
