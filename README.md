@@ -6,22 +6,22 @@
 
 ### Context
 
-We have a web-application where our admins can see/review/manage users.
+We have a web application where our admins can see/review/manage users.
 
 ### Challenge
 
-Our customer-success department are missing functionality to group users based on their skills.
+Our customer-success department is missing functionality to group users based on their skills.
 
 ### User story
 
-- As CS-manager, I want to **attach skills to users**, so I can easily **filter list of users by skill**.
+- As CS-manager, I want to **attach skills to users**, so I can easily **filter the list of users by skill**.
 
 ### Acceptance criteria (happy flow)
 
-1. I choose user
+1. I choose a user
 2. I attach skill "javascript" to the user
-3. I filter list of users by skill "javascript"
-4. I see result 1 row with user from 2nd step
+3. I filter the list of users by skill "javascript"
+4. I see result 1 row with the user from 2nd step
 
 ## Setup & run project
 
@@ -59,6 +59,6 @@ npm start
 
 ## Share results
 
-A zip-archive of project with accomplished exercise can be send via email to ivan@workgenius.com
+A zip archive of the project with accomplished exercise can be sent via email to ivan@workgenius.com
 
 Good luck ;) 
