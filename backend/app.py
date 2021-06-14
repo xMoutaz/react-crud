@@ -11,8 +11,9 @@ def create_app():
     _app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///:memory:"
     _app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     db.init_app(_app)
-    db.drop_all(app=_app)
-    db.create_all(app=_app)
+    with _app.app_context():
+        db.drop_all()
+        db.create_all()
     return _app
 
 
